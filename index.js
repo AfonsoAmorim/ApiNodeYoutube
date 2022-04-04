@@ -1,11 +1,13 @@
 const express = require('express');
 const server = express();
+const filmes = require('./src/data/filmes.json');
 
-server.get('/usuario', (req, res) => {
-    return res.json({usuario:  'Marcos'})
+server.get('/filmes', (req, res) => {
+    return res.json(filmes)
 });
 
 
 server.listen(3001, () => {
     console.log("Servidor rodando!");
 })
+
